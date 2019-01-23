@@ -1,0 +1,60 @@
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      
+      int numberofDays = 10;
+      
+      int[][] data = new int[24*numberofDays][4];
+      
+      for (int u = 0; u < 10; u++) {
+          
+        
+          for (int i = 0; i < 24; i++) {
+              
+              data[i][1] = i;
+              data[i][0] = u;
+              data[i][2] = (int)(Math.random()*60);
+          data[i][3] = (int)(Math.random()*12);
+          }
+      }
+      
+       for (int u = 0; u < 10; u++) {
+       
+      for (int i = 0; i < 24; i++) {
+            
+            System.out.println(i + " " + data[u][i] + " " + data[i][2] + " " + data[i][3]);
+        }
+        
+       }
+      
+     
+      int[][] averages = new int[numberofDays][3];
+      
+      for (int day = 0; day < numberofDays ; day++) {
+          
+          int temp = 1;
+          int humidity = 1;
+          
+          for (int hours = 0; hours < 23; hours++)
+          {
+              temp =+ (data[hours][2])/2;
+              humidity =+ (data[hours][3])/2;
+          }
+          
+         
+          averages[day][0] = day;
+          averages[day][1] = temp;
+          averages[day][2] = humidity;
+          
+         
+      }
+      
+        for (int i = 0; i < numberofDays; i++) {
+            
+            System.out.println(i + " " + averages[i][1] + " " + averages[i][2]);
+        }
+      
+      
+     }
+}
