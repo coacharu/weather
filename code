@@ -5,16 +5,16 @@ public class HelloWorld{
       
       int numberofDays = 10;
       
-      int[][] data = new int[24*numberofDays][4];
+      int[][][] data = new int[10][24][2];
       
       for (int u = 0; u < 10; u++) {
           
         
           for (int i = 0; i < 24; i++) {
               
-              data[i][1] = i;
-              data[i][0] = u;
-              data[i][2] = (int)(Math.random()*60);
+              data[u][i][1] = i;
+              data[u][i][0] = u;
+              data[u][i][2] = (int)(Math.random()*60);
           data[i][3] = (int)(Math.random()*12);
           }
       }
@@ -33,10 +33,10 @@ public class HelloWorld{
       
       for (int day = 0; day < numberofDays ; day++) {
           
-          int temp = 1;
-          int humidity = 1;
+          int temp = 0;
+          int humidity = 0;
           
-          for (int hours = 0; hours < 23; hours++)
+          for (int hours = 0; hours < 24; hours++)
           {
               temp =+ (data[hours][2])/2;
               humidity =+ (data[hours][3])/2;
